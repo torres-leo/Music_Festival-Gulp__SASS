@@ -1,0 +1,54 @@
+.header {
+    background-color: $verde;
+
+    .header__contenido {
+        padding: $separacion / 2 0;
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: capitalize;
+        }
+    }
+
+    h1 {
+        color: $blanco;
+        margin-bottom: 2rem;
+        text-align: center;
+        // @include nuevoMixin(uppercase, 3rem);
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+    //Esta parte es para dejar fija la barra de navegacion
+    //Cuando no se ve, pasando después del header
+    &.fijo {
+        position: fixed;
+        width: 100%;
+        box-shadow: 0 0.3rem 0.8rem #444;
+    }
+}
+
+.navegacion-principal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    justify-items: center; //Justify-items alinear elementos con grid
+    // display: flex;
+    // gap: 1rem;
+    //justify-content: center //justify-content alinear elementos con flex
+
+    a {
+        color: $blanco;
+        font-size: 2rem;
+        // @include nuevoMixin(lowercase, 2rem);
+
+        &:hover {
+            color: $amarillo; //Si se quiere hacer este tipo de anidaciones, se le coloca un "&" en lugar de la variable a utilizar
+        }
+    }
+
+    // a:hover {
+    //     color: $amarillo;
+    // }
+}

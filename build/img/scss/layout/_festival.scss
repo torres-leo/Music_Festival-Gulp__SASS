@@ -1,0 +1,28 @@
+.sobre-festival {
+    padding: $separacion;
+
+    @include tablet {
+        @include grid(2, $separacion);
+    }
+}
+
+.contenido-festival {
+    display: flex;
+    flex-direction: column;
+    //Cuando se coloca flex-direction, justify-content sirve para alinear verticalmente
+    // Y cuando no se coloca flex-direction, pero si justify-content sirve para alinear horizontalmente
+    justify-content: center;
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    .fecha {
+        color: $rosa;
+        font-weight: $bold;
+    }
+
+    .texto {
+        line-height: 1.5;
+    }
+}
