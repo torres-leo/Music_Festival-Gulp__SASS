@@ -1,0 +1,97 @@
+.lineup {
+    background-color: $rosa;
+    padding: $separacion 0;
+
+    h3 {
+        text-align: center;
+        color: $blanco;
+    }
+
+    p {
+        text-align: center;
+        color: $blanco;
+    }
+
+    .dia {
+        text-transform: uppercase;
+        margin: $separacion 0;
+    }
+
+    .escenarios-contenedor {
+        @include tablet {
+            @include grid(2, $separacion);
+        }
+
+        .escenario {
+            padding-top: $separacion / 2;
+        }
+
+        .nombre-escenario {
+            // padding-top: $separacion/2;
+            color: $negro;
+            font-size: 2rem;
+            font-weight: $delgada;
+
+            &:after {
+                content: "";
+                width: 20rem;
+                height: 10rem;
+                display: block;
+                margin: 1rem auto 0 auto;
+                background-size: 15rem;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+    }
+}
+
+.edm .nombre-escenario {
+    &:after {
+        background-image: url("../img/icono_edm.png");
+    }
+}
+
+// .rock {
+//     padding-top: $separacion;
+// }
+// .edm {
+//     padding-top: $separacion/2;
+// }
+
+.rock .nombre-escenario {
+    &:after {
+        background-image: url("../img/icono_rock.png");
+    }
+}
+
+.calendario {
+    padding: 0;
+    list-style: none;
+
+    li {
+        padding: $separacion / 3;
+        font-weight: $bold;
+    }
+
+    span {
+        font-weight: $regular;
+        text-transform: uppercase;
+    }
+}
+
+// .calendario li:nth-child(2n + 1) {
+//     background-color: $morado;
+// }
+
+.bg-verde .calendario li:nth-child(odd) {
+    //odd son todos los numerons nones: 1,3,5...
+    background-color: darken($verde, 10); //Para que sea el fondo oscuro
+    // background-color: lighten($verde, 10); //Para que sea el fondo claro
+}
+
+.bg-amarillo .calendario li:nth-child(odd) {
+    //odd son todos los numerons nones: 1,3,5...
+    background-color: darken($amarillo, 20); //Para que sea el fondo oscuro
+    // background-color: lighten($amarillo, 10); //Para que sea el fondo claro
+}
